@@ -1,13 +1,13 @@
 import pyodbc as pydb
 
 from sqlalchemy import create_engine, event
-from urllib.parse import quote_plus
+from urllib3.parse import quote_plus
 #=====================================================
 # Chaves de conexão com Banco de dados
 #------------------------------------------------------ 
-server_bd_corporativo = 'localhost'
-username_bd_corporativo = 'sa'
-password_bd_corporativo = 'P4ssw0rd'
+server_bd = 'localhost'
+username_bd = 'sa'
+password_bd = 'P4ssw0rd'
 driver = '{ODBC Driver 17 for SQL Server}'
 
 def connection(database):
@@ -19,8 +19,8 @@ def alchemy_connection(database):
     return create_engine(con)
 
 def string_connection_odbc(database):
-    con = 'DRIVER='+driver+';SERVER='+server_bd_corporativo+';PORT=1433;DATABASE='+database+';UID='+username_bd_corporativo+';PWD='+password_bd_corporativo
+    con = 'DRIVER='+driver+';SERVER='+server_bd+';PORT=1433;DATABASE='+database+';UID='+username_bd+';PWD='+password_bd
     return con
 
 def string_connection(database):
-    return quote_plus('DRIVER='+driver+';SERVER='+server_bd_corporativo+';DATABASE='+database+';UID='+username_bd_corporativo+';PWD='+password_bd_corporativo)
+    return quote_plus('DRIVER='+driver+';SERVER='+server_bd+';DATABASE='+database+';UID='+username_bd+';PWD='+password_bd)

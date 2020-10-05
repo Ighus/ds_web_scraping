@@ -68,6 +68,9 @@ instance/
 # Scrapy stuff:
 .scrapy
 
+#docker
+docker-compose.yml
+
 # Sphinx documentation
 docs/_build/
 
