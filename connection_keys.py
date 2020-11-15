@@ -1,7 +1,7 @@
 import pyodbc as pydb
 
 from sqlalchemy import create_engine, event
-from urllib3.parse import quote_plus
+from urllib.parse import quote_plus
 #=====================================================
 # Chaves de conexão com Banco de dados
 #------------------------------------------------------ 
